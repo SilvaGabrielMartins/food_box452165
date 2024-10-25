@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>FoodBox</title>
+    <style>
+      body {
+        background-color: #e5e5e5;
+        font-family: Roboto;
+      }
+      .div-head {
+        background-color: #cf2b2b;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+      }
+
+      .div-with-products {
+        display: flex;
+        justify-content: left;
+      }
+
+      .product {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+        cursor: pointer;
+        border: 5px solid white;
+
+        width: 250px;
+        height: auto;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: "Righteous";
+        font-weight: normal;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: normal;
+      }
+
+      h3 {
+        font-size: 30px;
+        margin-bottom: 15px;
+        font-family: "Righteous";
+        font-weight: normal;
+      }
+
+      h4 {
+        margin-top: 0px;
+        margin-bottom: 5px;
+        font-size: 20px;
+      }
+
+      img {
+        width: 130px;
+        border-radius: 5px;
+        margin-left: 15px;
+      }
+
+      p {
+        margin: 15px 0 0 0;
+      }
+
+      .button {
+        background-color: gray;
+        text-align: center;
+        border-radius: 50px;
+        padding: 15px;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: none;
+      }
+
+      .price {
+        font-weight: bold;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div-head">
+      <h1>FoodBox</h1>
+      <h2>Monte seu box e recebe em 15 minutos!</h2>
+    </div>
+    <h3>Primeiro, seu prato</h3>
+
+    <div class="div-with-products">
+      <div id="Frango" class="product eat" onclick="escolherPrato('Frango')">
+        <img src="images/frango.jpg" alt="Imagem Frango Yin-Yang" />
+        <h4>Frango Yin-Yang</h4>
+        <p>Um pouco de batata, um pouco de salada</p>
+        <p class="price">R$ 19,90</p>
+      </div>
+      <div id="Carne" class="product eat" onclick="escolherPrato('Carne')">
+        <img src="images/carne.jpg" alt="Imagem de Carne e Salada" />
+        <h4>Carne e Salada</h4>
+        <p>Partida ao meio para parecer mais carne</p>
+        <p class="price">R$ 24,90</p>
+      </div>
+
+      <div
+        id="Macarrao"
+        class="product eat"
+        onclick="escolherPrato('Macarrao')"
+      >
+        <img src="images/macarrao.jpg" alt="Imagem de Carne e Salada" />
+        <h4>Macarrão</h4>
+        <p>Um spagueti delicioso</p>
+        <p class="price">R$ 17,90</p>
+      </div>
+    </div>
+
+    <h3>Agora, sua bebida</h3>
+    <div class="div-with-products">
+      <div id="Coca" class="product drink" onclick="escolherBebida('Coca')">
+        <img src="images/coca.jpg" alt="Imagem Frango Yin-Yang" />
+        <h4>Coca Cola Gelada</h4>
+        <p>Normal, zero ou stervia. Vai na sorte.</p>
+        <p class="price">R$ 5,90</p>
+      </div>
+      <div
+        id="Refresco"
+        class="product drink"
+        onclick="escolherBebida('Refresco')"
+      >
+        <img src="images/refresco.jpg" alt="Imagem de Carne e Salada" />
+        <h4>Refresco</h4>
+        <p>Podia ser suco, mas leva água</p>
+        <p class="price">R$ 3,90</p>
+      </div>
+    </div>
+
+    <h3>Por fim, sua sobremesa</h3>
+    <div class="div-with-products">
+      <div
+        id="Pudim"
+        class="product desert"
+        onclick="escolherSobremesa('Pudim')"
+      >
+        <img src="images/pudim.jpg" />
+        <h4>Pudim</h4>
+        <p>Apenas um lindo e brilhante pudim</p>
+        <p class="price">R$ 7,90</p>
+      </div>
+      <div
+        id="Sorvete"
+        class="product desert"
+        onclick="escolherSobremesa('Sorvete')"
+      >
+        <img src="images/sorvete.jpg" />
+        <h4>Sorvete bem gelado</h4>
+        <p>Três bolinhas como na foto</p>
+        <p class="price">R$ 6,90</p>
+      </div>
+    </div>
+
+    <div id="button-order" class="button" onclick="finalizarPedido()">
+      Finalizar Pedido
+    </div>
+
+    <script>
+      let pratoEscolhido;
+      let bebidaEscolhida;
+      let sobremesaEscolhida;
+      let pedidoPronto = false;
+      function escolherPrato(prato) {
+        arrayPratos = document.getElementsByClassName("eat");
+        let indice = 0;
+        while (indice < arrayPratos.length) {
+          arrayPratos[indice].style.borderColor = "white";
+          indice++;
+        }
+        document.getElementById(prato).style.borderColor = "green";
+        pratoEscolhido = prato;
+        pedidoCompletoEscolhido();
+      }
+
+      function escolherBebida(bebida) {
+        arrayBebidas = document.getElementsByClassName("drink");
+        let indice = 0;
+        while (indice < arrayBebidas.length) {
+          arrayBebidas[indice].style.borderColor = "white";
+          indice++;
+        }
+        document.getElementById(bebida).style.borderColor = "green";
+        bebidaEscolhida = bebida;
+        pedidoCompletoEscolhido();
+      }
+
+      function escolherSobremesa(sobremesa) {
+        arraySobremesas = document.getElementsByClassName("desert");
+        let indice = 0;
+        while (indice < arraySobremesas.length) {
+          arraySobremesas[indice].style.borderColor = "white";
+          indice++;
+        }
+        document.getElementById(sobremesa).style.borderColor = "green";
+        sobremesaEscolhida = sobremesa;
+        pedidoCompletoEscolhido();
+      }
+
+      function pedidoCompletoEscolhido() {
+        if (
+          pratoEscolhido != null &&
+          bebidaEscolhida != null &&
+          sobremesaEscolhida != null
+        ) {
+          document.getElementById("button-order").style.cursor = "pointer";
+          document.getElementById("button-order").style.backgroundColor =
+            "green";
+          pedidoPronto = true;
+        }
+      }
+
+      function finalizarPedido() {
+        if (pedidoPronto) {
+          let mensagemPedido;
+          mensagemPedido =
+            "Olá, gostaria de pedir um combo: " +
+            pratoEscolhido +
+            "," +
+            bebidaEscolhida +
+            " e " +
+            sobremesaEscolhida;
+          window.open("https://wa.me/+5537999999999?text=" + mensagemPedido);
+        }
+      }
+    </script>
+  </body>
+</html>
