@@ -19,8 +19,8 @@ A aplicação consiste em montar um combo de um pedido, incluindo comida, bebida
 ![Mobile 2](https://github.com/gmartinssilva/food_box/blob/main/Assets/layout-mobile-2.png)
 
 ## Layout web
-![Mobile 1](https://github.com/gmartinssilva/Dev_do_Futuro/blob/main/Assets/web_1.png)
-![Mobile 2](https://github.com/gmartinssilva/Dev_do_Futuro/blob/main/Assets/web_2.png)
+![Web 1](https://github.com/gmartinssilva/food_box/blob/main/Assets/layout-web-1.png)
+
 
 # Tecnologias utilizadas
 - HTML
