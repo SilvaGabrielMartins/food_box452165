@@ -19,7 +19,7 @@ A aplicação consiste em montar um combo de um pedido, incluindo comida, bebida
 ![Mobile 2](https://github.com/gmartinssilva/food_box/blob/main/Assets/layout-mobile-2.png)
 
 ## Layout web
-![Web 1](https://github.com/gmartinssilva/food_box/blob/main/Assets/layout-web-1.png)
+![Web 1](https://github.com/gmartinssilva/food_box/blob/main/Assets/layout-web-1.gif)
 
 
 # Tecnologias utilizadas
